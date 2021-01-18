@@ -1,0 +1,178 @@
+@import "Project.scss";
+
+$primaryBg: rgb(15, 15, 24);
+$primaryText: whitesmoke;
+$accentColor: blue;
+
+// $h2:
+
+$tabletBreakpoint: 800px;
+$mobileBreakpoint: 400px;
+
+/**
+* =====================
+*   GLOBAL VARIABLES
+* =====================
+*/
+html {
+    background-color: $primaryBg;
+    // color: white;
+}
+
+* {
+    overflow-x: visible;
+    // overflow-y:hidden;
+}
+
+h1 {
+    font-size: 3.5rem;
+    @media (max-width: $tabletBreakpoint) {
+        font-size: 2.5rem;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+        font-size: 2rem;
+    }
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin-top: 0;
+    @media (max-width: $tabletBreakpoint) {
+        font-size: 3rem;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+        font-size: 1.9rem;
+    }
+}
+
+h3 {
+    font-size: 2.5rem;
+    margin-top: 0;
+    @media (max-width: $mobileBreakpoint) {
+        font-size: 1.3rem;
+    }
+}
+
+p {
+    font-size: 1.5rem;
+    @media (max-width: $tabletBreakpoint) {
+        font-size: 1rem;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+        font-size: 0.8rem;
+    }
+    max-width: 40ch;
+}
+
+/**
+* =====================
+*   LAYOUT
+* =====================
+*/
+.main {
+    transition: all 0.4s ease-in-out;
+    background-color: whitesmoke;
+    color: $primaryBg;
+}
+.body {
+    margin: 10rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+}
+
+.light {
+    background-color: $primaryText;
+    border-color: $primaryBg;
+    color: $primaryBg;
+
+    button:hover {
+        background: rgb(255, 213, 0);
+    }
+}
+
+.dark {
+    background-color: $primaryBg;
+    border-color: $primaryBg;
+    color: $primaryText;
+
+    button:hover {
+        background: rgb(78, 49, 225);
+    }
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    padding-top: 3rem;
+    transition: all 0.4s ease-in-out;
+}
+
+.sticky-subheader {
+    position: sticky;
+    padding-top: 3rem;
+    z-index: 1;
+    width: 100%;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-grow: 1;
+    @media (max-width: $tabletBreakpoint) {
+        flex-direction: column;
+    }
+    .hero-text {
+        margin: 2rem;
+        margin-top: 6rem;
+    }
+    .hero-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+    }
+}
+
+.cta {
+    background: none;
+    padding-block: 1em;
+    font-weight: 800;
+    border: 3px solid;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    &:hover {
+        background: $accentColor;
+    }
+}
+
+.projects {
+    @media (min-width: $tabletBreakpoint) {
+        margin: 2em;
+    }
+}
+
+.bubble {
+    display: inline-block;
+    font-weight: 600;
+    padding: 0.6em;
+    color: $primaryText;
+    border-radius: 0.5em;
+    margin: 0.25rem;
+}
+
+.platform {
+    background: hsl(255, 90%, 69%);
+}
+
+.tech {
+    background: hsl(0, 78%, 63%);
+}
+
+.link {
+    background: hsl(144, 77%, 44%);
+}
