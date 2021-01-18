@@ -10,6 +10,7 @@ import Contact from './layout-components/Contact';
 import { useSelector } from 'react-redux';
 import focusToggler from './helper-functions/FocusToggler';
 
+
 export default function App() {
   const theme = useSelector(state => state.theme);
 
@@ -20,6 +21,10 @@ export default function App() {
 
   function changeFocus(newFocus, isInView) {
     setCurrFocus(focusToggler(newFocus, isInView));
+  }
+
+  function goToContact() {
+
   }
 
 

@@ -1,6 +1,4 @@
 .navBar {
-   
-
     position: fixed;
     z-index: 1000;
     display: flex;
@@ -8,20 +6,22 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column-reverse;
+
     .theme-toggle {
         margin: 2rem;
     }
     .tab {
+        transition: all 0.1s ease-in-out;
+
         display: block;
         font-weight: 800;
         border: 3px solid;
         border-radius: 0.5rem;
         font-size: 1rem;
         padding: 1em;
-
         margin-inline: 1em;
         &:hover {
-            background: orangered;
+            background-color: coral;
         }
     }
 
@@ -29,11 +29,19 @@
         transform: rotate(-90deg);
     }
 
-     @media (max-width: 800px) {
-        display: hidden;
-    }   
+    @media (max-width: 800px) {
+        display: none;
+    }
 }
 
 .currentTab {
-    background-color: green;
+    &.light {
+        background: rgb(255, 213, 0);
+        transform: rotate(-90deg) scale(1.2);
+    }
+
+    &.dark {
+        background: rgb(78, 49, 225);
+        transform: rotate(-90deg) scale(1.2);
+    }
 }

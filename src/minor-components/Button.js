@@ -6,7 +6,7 @@ export default function Button({text, onClick }) {
     const theme = useSelector(state => state.theme);
 
     return (<>
-        <button className={`cta ${theme}`} onClick={onClick}>{text}</button>
+        <button className={`cta clickable ${theme}`} onClick={onClick}>{text}</button>
         </>
     )
 }

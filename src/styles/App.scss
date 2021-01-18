@@ -31,13 +31,16 @@ header {
     padding-top: 3rem;
     white-space: nowrap;
     &.isSticky {
-        z-index: 99;
+        z-index: 1;
         &::before {
             content: "                   : ";
-              white-space: pre;
-              font-weight: 600;
+            white-space: pre;
+            font-weight: 600;
             // color: salmon;
         }
+    }
+    @media (max-width: $mobileBreakpoint) {
+        font-size: 2rem;
     }
 }
 
@@ -68,19 +71,19 @@ h3 {
     font-size: 2.5rem;
     margin-top: 0;
     @media (max-width: $mobileBreakpoint) {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
 }
 
 p {
     font-size: 1.5rem;
     @media (max-width: $tabletBreakpoint) {
-        font-size: 1rem;
+        font-size: 1.4rem;
     }
 
-    @media (max-width: $mobileBreakpoint) {
-        font-size: 0.8rem;
-    }
+    // @media (max-width: $mobileBreakpoint) {
+    //     font-size: 0.8rem;
+    // }
     max-width: 40ch;
 }
 
@@ -96,6 +99,19 @@ p {
 }
 .body {
     margin: 10rem;
+
+    @media (max-width: $tabletBreakpoint) {
+        margin: 4rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+        margin: 1rem;
+        margin-top: 0rem;
+        margin-bottom: 0rem;
+    }
+
     margin-top: 0rem;
     margin-bottom: 0rem;
 }
@@ -123,7 +139,7 @@ p {
 .sticky-header {
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 1;
     width: 100%;
     padding-top: 3rem;
     transition: all 0.4s ease-in-out;
@@ -146,12 +162,26 @@ p {
     .hero-text {
         margin: 2rem;
         margin-top: 6rem;
+
+        @media (max-width: $mobileBreakpoint) {
+            margin-top: 3rem;
+        }
     }
+    
     .hero-img {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-grow: 1;
+    }
+
+    .hero-flex-wrapper {
+        display: flex;
+        @media (min-width: $tabletBreakpoint) {
+            display: inline-block;
+        }
+        margin-top: 5rem;
+        justify-content: space-evenly;
     }
 }
 
@@ -175,6 +205,9 @@ p {
 
 .contact {
     min-height: 100vh;
+    @media (min-width: $tabletBreakpoint) {
+        margin: 2em;
+    }
 }
 
 .bubble {
@@ -196,4 +229,29 @@ p {
 
 .link {
     background: hsl(144, 77%, 44%);
+}
+
+.header-toggle {
+    display: none;
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    @media (max-width: $tabletBreakpoint) {
+        display: block;
+    }
+}
+
+.clickable {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    cursor: pointer;
+}
+
+.mobile {
+    @media (min-width: $tabletBreakpoint) {
+        display: none;
+    }
 }
