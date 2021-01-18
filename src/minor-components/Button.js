@@ -1,7 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { useSelector} from 'react-redux';
 
-// todo use styled components
-export default function Button({theme, text, onClick}) {
+
+export default function Button({text, onClick }) {
+    const theme = useSelector(state => state.theme);
+
     return (<>
         <button className={`cta ${theme}`} onClick={onClick}>{text}</button>
         </>

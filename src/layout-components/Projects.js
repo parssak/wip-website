@@ -1,5 +1,8 @@
 import React from 'react'
 import Project from './Project';
+import { useSelector } from 'react-redux';
+
+
 const templateimg = "http://placehold.it/500x350"
 const linkIcon = "http://placehold.it/150x150"
 let projects = [
@@ -104,7 +107,8 @@ let projects = [
         }]
     }
 ];
-export default function Projects({ theme }) {
+export default function Projects() {
+    const theme = useSelector(state => state.theme);
     return (
         <div className="projects">
             <div className={`sticky-header ${theme}`}>

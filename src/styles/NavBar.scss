@@ -6,23 +6,26 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column-reverse;
-    transition: all 1s;
+    // transition: all 1s;
     .theme-toggle {
         margin: 2rem;
     }
     .tab {
         display: block;
-        transition: all 1s;
         font-weight: 800;
         border: 3px solid;
         border-radius: 0.5rem;
         font-size: 1rem;
         padding: 1em;
-        transform: rotate(-90deg);
+        
         margin-inline: 1em;
         &:hover {
             background: orangered;
         }
+    }
+
+    .tilted {
+transform: rotate(-90deg);
     }
 }
 

@@ -3,11 +3,39 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createStore } from 'redux';
+import allReducers from './reducers/allReducers';
+import { Provider } from 'react-redux';
+
+// Store: Globalized State
+const store = createStore(allReducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+// Action: 
+const toggleLight = () => {
+  return {
+    type: 'LIGHT'
+  }
+}
+
+const toggleDark = () => {
+  return {
+    type: 'DARK'
+  }
+}
+
+
+// let store = createStore(toggleTheme)
+
+// store.subscribe(() => console.log(store.getState()));
+
+
+// Dispatch
+// store.dispatch(toggleDark());
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
