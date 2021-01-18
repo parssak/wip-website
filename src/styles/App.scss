@@ -4,8 +4,6 @@ $primaryBg: rgb(15, 15, 24);
 $primaryText: whitesmoke;
 $accentColor: blue;
 
-// $h2:
-
 $tabletBreakpoint: 800px;
 $mobileBreakpoint: 400px;
 
@@ -154,6 +152,10 @@ p {
     @media (min-width: $tabletBreakpoint) {
         margin: 2em;
     }
+}
+
+.contact {
+    min-height: 100vh;
 }
 
 .bubble {

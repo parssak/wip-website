@@ -8,36 +8,24 @@ import { useInView, InView } from 'react-intersection-observer';
 import Contact from './layout-components/Contact';
 
 import { useSelector } from 'react-redux';
-
-
-
-let heroFocus = true;
-let projectFocus = false;
-let contactFocus = false;
+import focusToggler from './helper-functions/FocusToggler';
 
 export default function App() {
   const theme = useSelector(state => state.theme);
 
   const { heroRef } = useInView();
-  const { projectRef } = useInView({ threshold: 0.5 });
+  const { projectRef } = useInView();
 
   const [currFocus, setCurrFocus] = useState('hero');
 
   function changeFocus(newFocus, isInView) {
-    console.log("CHANFEFEAC", newFocus, isInView, "CURR>>>", currFocus);
-    if (newFocus === 'hero') heroFocus = isInView;
-    else if (newFocus === 'projects') projectFocus = isInView;
-    else if (newFocus === 'contact') contactFocus = isInView;
-
-    if (isInView) {
-      setCurrFocus(newFocus);
-    }
+    setCurrFocus(focusToggler(newFocus, isInView));
   }
 
 
   return (
     <div className={`main ${theme}`}>
-      <NavBar currFocus={currFocus} heroFocus={heroFocus} projectFocus={projectFocus} contactFocus={contactFocus} />
+      <NavBar currFocus={currFocus} />
       <div className="body">
 
         <InView as="div" onChange={(inView, entry) => changeFocus('hero', inView)}>

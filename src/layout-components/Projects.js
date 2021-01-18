@@ -116,7 +116,8 @@ export default function Projects() {
             </div>
 
             {projects.map((project, x) => (
-                <Project project={project} x={x} style={theme} />
+                // <div className="project" key={"project" + x}>hi</div>
+                <Project project={project} x={x} style={theme} key={"project-component"+x}/>
             ))}
         </div>
     )
