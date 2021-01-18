@@ -23,8 +23,9 @@ export default function Hero() {
                             <Button text={"Contact Me"} />
                         </Link>
                     </div>
-                    
-                    <Toggle className="hero-toggle mobile" />
+                    <div className="mobile">
+                        <Toggle className="hero-toggle" />
+                    </div>
                 </div>
             </div>
         </div>
