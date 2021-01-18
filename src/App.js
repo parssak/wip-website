@@ -31,7 +31,7 @@ export default function App() {
         <InView as="div" onChange={(inView, entry) => changeFocus('hero', inView)}>
           <Hero ref={heroRef} />
         </InView>
-
+        
         <InView as="div" onChange={(inView, entry) => changeFocus('projects', inView)}>
           <Projects ref={projectRef} />
         </InView>

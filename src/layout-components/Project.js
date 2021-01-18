@@ -1,11 +1,11 @@
 import React from 'react'
+import Header from '../minor-components/Header';
 
-export default function Project({ project, x, theme }) {
+export default function Project({ project, x}) {
     return (
+        
         <div className="project" key={"project" + x}>
-            <div className={`title sticky-subheader`} key={"title" + x}>
-                <h3>{project.name}</h3>
-            </div>
+            <Header>{project.name}</Header>
 
             <div className="media" key={"mediaz-platformz" + x + project.name}>
                 {project.media.map((media, x) => (

@@ -1,4 +1,6 @@
 .navBar {
+   
+
     position: fixed;
     z-index: 1000;
     display: flex;
@@ -6,7 +8,6 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column-reverse;
-    // transition: all 1s;
     .theme-toggle {
         margin: 2rem;
     }
@@ -17,7 +18,7 @@
         border-radius: 0.5rem;
         font-size: 1rem;
         padding: 1em;
-        
+
         margin-inline: 1em;
         &:hover {
             background: orangered;
@@ -25,8 +26,12 @@
     }
 
     .tilted {
-transform: rotate(-90deg);
+        transform: rotate(-90deg);
     }
+
+     @media (max-width: 800px) {
+        display: hidden;
+    }   
 }
 
 .currentTab {
