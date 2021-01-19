@@ -10,6 +10,7 @@ import Contact from './layout-components/Contact';
 import { useSelector } from 'react-redux';
 import focusToggler from './helper-functions/FocusToggler';
 
+import { instagram } from './fonts/feather/instagram.svg';
 
 export default function App() {
   const theme = useSelector(state => state.theme);
@@ -30,9 +31,11 @@ export default function App() {
 
   return (
     <div className={`main ${theme}`}>
-      <NavBar currFocus={currFocus} />
-      <div className="body">
 
+      <NavBar currFocus={currFocus} />
+      
+      <div className="body">
+        
         <InView as="div" onChange={(inView, entry) => changeFocus('hero', inView)}>
           <Hero ref={heroRef} />
         </InView>

@@ -7,6 +7,7 @@ import Button from '../minor-components/Button';
 // import Content from '../components/Content';
 import Axios from 'axios';
 import { useSelector } from 'react-redux';
+import Socials from '../minor-components/Socials';
 
 
 class Contact extends React.Component {
@@ -101,6 +102,7 @@ class Contact extends React.Component {
                     {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
                     {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
                 </form>
+                <Socials/>
             </div>
         );
     }

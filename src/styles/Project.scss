@@ -31,7 +31,6 @@
 
     .flex-wrapper {
         display: flex;
-        // flex-grow: 1;
         flex-basis: content;
         justify-content: space-between;
         @media (max-width: 800px) {

@@ -1,22 +1,14 @@
+@import "master.scss";
 @import "Project.scss";
 @import "fonts.scss";
-
-$primaryDark: rgb(15, 15, 24);
-$secondaryDark: rgb(50, 50, 86);
-$accentDark: rgb(78, 49, 225);
-
-$primaryLight: whitesmoke;
-$secondaryLight: rgb(220, 220, 220);
-$accentLight: coral;
-
-$tabletBreakpoint: 900px;
-$mobileBreakpoint: 400px;
+@import "Contact.scss";
 
 /**
 * =====================
 *   GLOBAL VARIABLES
 * =====================
 */
+
 html {
     background-color: $primaryDark;
     // color: white;
@@ -95,50 +87,6 @@ p {
     //     font-size: 0.8rem;
     // }
     max-width: 40ch;
-}
-
-fieldset {
-    border: none;
-    display: flex;
-    flex-direction: column;
-    border: none;
-    margin-left: 0;
-    padding-left: 0;
-    // max-width: 50%;
-    // overflow: visible;
-    label {
-        font-weight: 400;
-        font-size: 1.5rem;
-        border: none;
-    }
-
-    .customForm {
-        border: none;
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        flex-basis: content;
-        // flex-grow: -1;
-        @media (max-width: $tabletBreakpoint) {
-            // width: 16ch;
-        }
-        // overflow-x: hidden;
-        min-width: 15ch;
-        min-height: 1em;
-        // width: auto;
-        &.dark {
-            background-color: $secondaryDark;
-        }
-        &.light {
-            background-color: $secondaryLight;
-        }
-
-        &:focus {
-            outline: orange;
-            // border: 2px white;
-        }
-    }
 }
 
 /**
@@ -271,18 +219,18 @@ fieldset {
     border: none;
     font-size: 1em;
     outline: none;
-}
 
-.platform {
-    background: hsl(255, 90%, 69%);
-}
+    &.platform {
+        background: hsl(255, 90%, 69%);
+    }
 
-.tech {
-    background: hsl(0, 78%, 63%);
-}
+    &.tech {
+        background: hsl(0, 78%, 63%);
+    }
 
-.link {
-    background: hsl(144, 77%, 44%);
+    &.link {
+        background: hsl(144, 77%, 44%);
+    }
 }
 
 .header-toggle {

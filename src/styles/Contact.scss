@@ -1,0 +1,39 @@
+
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-left: 0;
+    padding-left: 0;
+    label {
+        font-weight: 400;
+        font-size: 1.5rem;
+        border: none;
+    }
+
+    .customForm {
+        border: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        flex-basis: content;
+        @media (max-width: $tabletBreakpoint) {
+            // width: 16ch;
+        }
+        min-width: 15ch;
+        min-height: 1em;
+
+        &.dark {
+            background-color: $secondaryDark;
+        }
+        &.light {
+            background-color: $secondaryLight;
+        }
+
+        &:focus {
+            outline: orange;
+        }
+    }
+}
