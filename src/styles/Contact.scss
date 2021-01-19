@@ -1,11 +1,19 @@
+@import "master.scss";
 
-fieldset {
+form {
+    margin-top: 10rem;
+}
+
+.fieldset {
     border: none;
     display: flex;
     flex-direction: column;
     border: none;
     margin-left: 0;
     padding-left: 0;
+    flex-basis: content;
+    margin-bottom: 2em;
+
     label {
         font-weight: 400;
         font-size: 1.5rem;
@@ -18,22 +26,28 @@ fieldset {
         font-weight: 600;
         padding: 0.5rem;
         border-radius: 0.5rem;
+
         flex-basis: content;
+
         @media (max-width: $tabletBreakpoint) {
             // width: 16ch;
         }
-        min-width: 15ch;
+
         min-height: 1em;
 
         &.dark {
             background-color: $secondaryDark;
+            &:focus {
+                outline: none;
+                border: $primaryLight 2px solid;
+            }
         }
         &.light {
             background-color: $secondaryLight;
-        }
-
-        &:focus {
-            outline: orange;
+            &:focus {
+                outline: none;
+                border: $primaryDark 2px solid;
+            }
         }
     }
 }

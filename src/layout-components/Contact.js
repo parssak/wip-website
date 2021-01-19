@@ -82,23 +82,23 @@ class Contact extends React.Component {
                     <h3>Contact Me</h3>
                 </div>
                 <form onSubmit={this.handleSubmit}>
-                    <fieldset>
+                    <div className="fieldset">
                         <Form.Label htmlFor="full-name">Full Name</Form.Label>
-                        <Form.Control className={`customForm ${this.props.theme}`}  id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
-                    </fieldset>
-
-                    <fieldset>
+                        <Form.Control className={`customForm ${this.props.theme}`} id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
+                    </div>
+                        
+                    <div className="fieldset">
                         <Form.Label htmlFor="email">Email</Form.Label>
                         <Form.Control className={`customForm ${this.props.theme}`} id="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} />
-                    </fieldset>
+                    </div>
 
-                    <fieldset>
+                    <div className="fieldset">
                         <Form.Label htmlFor="message">Message</Form.Label>
                         <Form.Control className={`customForm ${this.props.theme}`}  id="message" name="message" as="textarea" rows="3" value={this.state.message} onChange={this.handleChange} />
-                    </fieldset>
+                    </div>
 
                     <div className="flex-h-wrap">
-                        <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send message"} />
+                        <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send message"} helperClasses={"rainbow-hover"}/>
                         <Socials />
                     </div>
                     

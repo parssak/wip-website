@@ -16,7 +16,7 @@
     .media {
         grid-area: media;
         display: flex;
-        overflow-x: hidden;
+        overflow-x: scroll;
         
         img {
             max-width: 20rem;

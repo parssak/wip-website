@@ -10,3 +10,44 @@ $tabletBreakpoint: 900px;
 $mobileBreakpoint: 400px;
 
 $standardTransition: all 0.4s ease-in-out;
+
+
+@keyframes colorRotate {
+    from {
+        color: #6666ff;
+    }
+    10% {
+        color: #0099ff;
+    }
+    50% {
+        color: #50d050;
+    }
+    75% {
+        color: #ff6933;
+    }
+    100% {
+        color: #6666ff;
+    }
+}
+
+
+@keyframes colorRotateBg {
+    from {
+        background-color: #6666ff;
+    }
+    10% {
+        background-color: #0099ff;
+    }
+    50% {
+        background-color: #50d050;
+    }
+    75% {
+        background-color: #ff6933;
+    }
+    100% {
+        background-color: #6666ff;
+    }
+}
+
+$rainbowAnim: colorRotate 6s ease-in-out infinite;
+$rainbowAnimBg: colorRotateBg 6s ease-in-out infinite;
