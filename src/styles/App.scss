@@ -96,10 +96,10 @@ a {
     &:active {
         text-decoration: none;
         &.dark {
-            color:$primaryLight;
+            color: $primaryLight;
         }
         &.light {
-            color:$primaryDark;
+            color: $primaryDark;
         }
     }
 }
@@ -115,17 +115,21 @@ a {
     color: $primaryDark;
 }
 
+$bodyInlineMarginReg: 10rem;
+$bodyInlineMarginTab: 2rem;
+$bodyInlineMarginMobile: 1rem;
+
 .body {
-    margin: 10rem;
+    margin: $bodyInlineMarginReg;
     margin-right: 5rem;
     @media (max-width: $tabletBreakpoint) {
-        margin: 2rem;
+        margin: $bodyInlineMarginTab;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
 
     @media (max-width: $mobileBreakpoint) {
-        margin: 1rem;
+        margin: $bodyInlineMarginMobile;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
@@ -223,8 +227,35 @@ a {
     @media (min-width: $tabletBreakpoint) {
         margin: 2em;
     }
-    & * > {width: auto;}
+    & * > {
+        width: auto;
+    }
+}
 
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding: $bodyInlineMarginReg;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+
+    @media (max-width: $tabletBreakpoint) {
+        padding: $bodyInlineMarginTab;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    @media (max-width: $mobileBreakpoint) {
+        padding: $bodyInlineMarginMobile;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
 }
 
 .bubble {
@@ -275,7 +306,6 @@ a {
         display: none;
     }
 }
-
 
 .flex-h-wrap {
     display: flex;
