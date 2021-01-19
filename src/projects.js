@@ -49,12 +49,12 @@ export const projects = [
         {
             text: "In Browser",
             icon: linkIcon,
-            link: "https://www.parssak.com/darco/index.html"
+            link: "./darco/index.html"
         }]
     },
     {
         name: "MixBot 🎛️",
-        description: "MixBot is a desktop application that acts as your personal DJ. MixBot will finds songs to mix, get their audio files, load up two Decks and mix an entire DJ set, without the need of any user input!, The user selects from 3 different types of mixes, from Euro House, to Chill House, or even Tech House. Then, MixBot fetches songs through the Spotify and YouTube APIs, and then mixes them using the WebAudio API. ",
+        description: "MixBot is a desktop application that acts as your personal DJ. MixBot will finds songs to mix, get their audio files, load up two Decks and mixes an entire DJ set. The user selects from 3 different types of mixes, from Euro House, to Chill House, or even Tech House. Then, MixBot fetches songs through the Spotify and YouTube APIs, and then mixes them using the WebAudio API and magic. ",
         media: ["/media/mix_1.png", "/media/mix_2.png", "/media/mix_3.png"],
         tech: ["JavaScript", "ReactJS", "ExpressJS", "MongoDB"],
         platforms: ["MacOS", "Windows"],
@@ -64,7 +64,7 @@ export const projects = [
             link: "https://github.com/parssak/mixbot"
         },
         {
-            text: "Download for Mac and Windows",
+            text: "Download Mac / Windows",
             icon: linkIcon,
             link: ""
         }]

@@ -29,7 +29,6 @@ export default function App() {
   return (
     <div className={`main ${theme}`}>
       <NavBar currFocus={currFocus} />
-
       <div className="body">
         <UserThemeListener />
         <InView as="div" onChange={(inView, entry) => changeFocus('hero', inView)}>

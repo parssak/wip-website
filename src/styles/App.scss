@@ -231,13 +231,16 @@ $bodyInlineMarginMobile: 1rem;
         width: auto;
     }
 }
+$bodyPaddingFooter: $bodyInlineMarginReg + 2rem;
+$bodyPaddingFooterTab: $bodyInlineMarginTab + 2rem;
+// $bodyPaddingFooterMobile: $bodyInlineMarginTab + 2rem;
 
 .footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 3rem;
-    padding: $bodyInlineMarginReg;
+    padding: $bodyPaddingFooter;
     padding-top: 0rem;
     padding-bottom: 0rem;
 
@@ -324,4 +327,9 @@ $bodyInlineMarginMobile: 1rem;
     &:hover {
         animation: $rainbowAnimBg;
     }
+}
+
+
+.downloadPrompt {
+    
 }
