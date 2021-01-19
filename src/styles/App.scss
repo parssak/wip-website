@@ -1,10 +1,16 @@
 @import "Project.scss";
 
-$primaryBg: rgb(15, 15, 24);
-$primaryText: whitesmoke;
-$accentColor: blue;
+$primaryDark: rgb(15, 15, 24);
+$secondaryDark: rgb(50, 50, 86);
+$accentDark: rgb(78, 49, 225);
 
-$tabletBreakpoint: 800px;
+$primaryLight: whitesmoke;
+$secondaryLight: rgb(220, 220, 220);
+$accentLight: coral;
+
+
+
+$tabletBreakpoint: 900px;
 $mobileBreakpoint: 400px;
 
 /**
@@ -13,7 +19,7 @@ $mobileBreakpoint: 400px;
 * =====================
 */
 html {
-    background-color: $primaryBg;
+    background-color: $primaryDark;
     // color: white;
 }
 
@@ -87,6 +93,49 @@ p {
     max-width: 40ch;
 }
 
+fieldset {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin-left: 0;
+    padding-left: 0;
+
+    label {
+        font-weight: 600;
+        font-size: 1.5rem;
+        border: none;
+        // &.dark {
+        //     color: $secondaryDark;
+        // }
+        // &.light {
+        //     color: $secondaryLight;
+        // }
+    }
+
+    .customForm {
+        border: none;
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        min-width: 50%;
+        max-width: 100%;
+        min-height: 1em;
+        &.dark {
+            background-color: $secondaryDark;
+        }
+        &.light {
+            background-color: $secondaryLight;
+        }
+
+        &:focus {
+            outline: orange;
+            // border: 2px white;
+        }
+    }
+}
+
 /**
 * =====================
 *   LAYOUT
@@ -95,13 +144,13 @@ p {
 .main {
     transition: all 0.4s ease-in-out;
     background-color: whitesmoke;
-    color: $primaryBg;
+    color: $primaryDark;
 }
 .body {
     margin: 10rem;
-
+    margin-right: 5rem;
     @media (max-width: $tabletBreakpoint) {
-        margin: 4rem;
+        margin: 2rem;
         margin-top: 0rem;
         margin-bottom: 0rem;
     }
@@ -117,22 +166,22 @@ p {
 }
 
 .light {
-    background-color: $primaryText;
-    border-color: $primaryBg;
-    color: $primaryBg;
+    background-color: $primaryLight;
+    border-color: $primaryDark;
+    color: $primaryDark;
 
     button:hover {
-        background: rgb(255, 213, 0);
+        background: $accentLight;
     }
 }
 
 .dark {
-    background-color: $primaryBg;
-    border-color: $primaryBg;
-    color: $primaryText;
+    background-color: $primaryDark;
+    border-color: $primaryDark;
+    color: $primaryLight;
 
     button:hover {
-        background: rgb(78, 49, 225);
+        background: $accentDark;
     }
 }
 
@@ -167,7 +216,7 @@ p {
             margin-top: 3rem;
         }
     }
-    
+
     .hero-img {
         display: flex;
         justify-content: center;
@@ -192,9 +241,6 @@ p {
     border: 3px solid;
     border-radius: 0.5rem;
     font-size: 1rem;
-    &:hover {
-        background: $accentColor;
-    }
 }
 
 .projects {
@@ -214,9 +260,12 @@ p {
     display: inline-block;
     font-weight: 600;
     padding: 0.6em;
-    color: $primaryText;
+    color: $primaryLight;
     border-radius: 0.5em;
     margin: 0.25rem;
+    border: none;
+    font-size: 1em;
+    outline: none;
 }
 
 .platform {

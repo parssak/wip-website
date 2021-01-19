@@ -42,7 +42,7 @@ export default function App() {
         </InView>
 
         <InView as="div" onChange={(inView, entry) => changeFocus('contact', inView)}>
-          <Contact />
+          <Contact theme={theme}/>
         </InView>
 
       </div>

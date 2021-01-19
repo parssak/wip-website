@@ -10,7 +10,6 @@ export default function Header({ children, sticky = false, className, ...rest })
         const cachedRef = ref.current,
             observer = new IntersectionObserver(
                 ([e]) => {
-                    console.log(e.boundingClientRect.top);
                     setIsSticky(e.boundingClientRect.top < 0 && e.intersectionRect.top === 0);
                 },
                 { threshold: [1]})

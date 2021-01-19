@@ -1,4 +1,5 @@
 import React from 'react'
+import Bubble from '../minor-components/Bubble';
 import Header from '../minor-components/Header';
 
 export default function Project({ project, x}) {
@@ -41,9 +42,7 @@ export default function Project({ project, x}) {
                     <div className="links" key={"linkz" + x + project.name}>
                         <h4>Links</h4>
                         {project.links.map((link, x) => (
-                            <div className="link bubble" key={"link" + x + project.name}>
-                                {link.text}
-                            </div>
+                            <Bubble text={link.text} link={link.link}/>
                         ))}
                     </div>
                 </div>

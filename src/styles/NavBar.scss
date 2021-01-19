@@ -11,8 +11,8 @@
         margin: 2rem;
     }
     .tab {
+        
         transition: all 0.1s ease-in-out;
-
         display: block;
         font-weight: 800;
         border: 3px solid;
@@ -29,7 +29,7 @@
         transform: rotate(-90deg);
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
         display: none;
     }
 }

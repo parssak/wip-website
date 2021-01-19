@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector} from 'react-redux';
 
 
-export default function Button({text, onClick }) {
+export default function Button({text, onClick, ...props }) {
     const theme = useSelector(state => state.theme);
 
     return (<>
