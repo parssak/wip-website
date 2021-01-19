@@ -9,8 +9,7 @@ import Contact from './layout-components/Contact';
 
 import { useSelector } from 'react-redux';
 import focusToggler from './helper-functions/FocusToggler';
-
-import { instagram } from './fonts/feather/instagram.svg';
+import UserThemeListener from './helper-functions/UserThemeListener';
 
 export default function App() {
   const theme = useSelector(state => state.theme);
@@ -24,18 +23,13 @@ export default function App() {
     setCurrFocus(focusToggler(newFocus, isInView));
   }
 
-  function goToContact() {
-
-  }
-
-
   return (
     <div className={`main ${theme}`}>
 
       <NavBar currFocus={currFocus} />
       
       <div className="body">
-        
+        <UserThemeListener/>
         <InView as="div" onChange={(inView, entry) => changeFocus('hero', inView)}>
           <Hero ref={heroRef} />
         </InView>

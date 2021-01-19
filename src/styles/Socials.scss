@@ -1,0 +1,7 @@
+@import "master.scss";
+.socials {
+    transition: $standardTransition;
+    svg {
+        margin-inline: 0.5rem;
+    }
+}
