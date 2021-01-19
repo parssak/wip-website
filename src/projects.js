@@ -54,7 +54,7 @@ export const projects = [
     },
     {
         name: "MixBot 🎛️",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam iure nihil provident? Assumenda consectetur perspiciatis in pariatur itaque. Accusamus facilis consequuntur, alias voluptatem nemo ipsam nisi blanditiis facere autem sit dolores totam asperiores quis magni. Earum sint quas tenetur, alias corrupti doloremque nam cum veritatis! Obcaecati nesciunt magnam impedit dolorem.",
+        description: "MixBot is a desktop application that acts as your personal DJ. MixBot will finds songs to mix, get their audio files, load up two Decks and mix an entire DJ set, without the need of any user input!, The user selects from 3 different types of mixes, from Euro House, to Chill House, or even Tech House. Then, MixBot fetches songs through the Spotify and YouTube APIs, and then mixes them using the WebAudio API. ",
         media: ["/media/mix_1.png", "/media/mix_2.png", "/media/mix_3.png"],
         tech: ["JavaScript", "ReactJS", "ExpressJS", "MongoDB"],
         platforms: ["MacOS", "Windows"],
@@ -71,7 +71,7 @@ export const projects = [
     },
     {
         name: "TeaBlocks 🍎",
-        description: "An educational mobile app project for teaching kids to code through a node-base visual programming language and lessons.",
+        description: `An educational mobile app project for teaching kids to code through a node-base visual programming language and lessons. I'm currently working on this project, but there is a demo available if you want to check it out!  `,
         media: ["/media/teab_3.png", "/media/tea_2.png", "/media/tea_3.png"],
         tech: ["TypeScript", "React Native", "ExpressJS", "PostgreSQL"],
         platforms: ["TBD"],

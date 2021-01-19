@@ -79,7 +79,6 @@ class Contact extends React.Component {
             <div className={`contact`} id="contact">
                 <div className={`sticky-header ${this.props.theme}`}>
                     <h3>Contact Me</h3>
-                    {/* <Toggle helperClasses={"header-toggle"}/> */}
                 </div>
                 <form onSubmit={this.handleSubmit}>
                     <fieldset>
@@ -97,7 +96,7 @@ class Contact extends React.Component {
                         <Form.Control className={`customForm ${this.props.theme}`}  id="message" name="message" as="textarea" rows="3" value={this.state.message} onChange={this.handleChange} />
                     </fieldset>
 
-                    <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send Message  📨"}/>
+                    <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send message"}/>
                        
                     {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
                     {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}

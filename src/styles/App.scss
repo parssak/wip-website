@@ -40,10 +40,9 @@ header {
     &.isSticky {
         z-index: 1;
         &::before {
-            content: "                   : ";
+            content: "                : ";
             white-space: pre;
             font-weight: 600;
-            // color: salmon;
         }
     }
     @media (max-width: $mobileBreakpoint) {
@@ -119,11 +118,13 @@ fieldset {
         font-weight: 600;
         padding: 0.5rem;
         border-radius: 0.5rem;
+        flex-basis: content;
+        // flex-grow: -1;
         @media (max-width: $tabletBreakpoint) {
             // width: 16ch;
         }
         // overflow-x: hidden;
-        // max-width: 50%;
+        min-width: 15ch;
         min-height: 1em;
         // width: auto;
         &.dark {
