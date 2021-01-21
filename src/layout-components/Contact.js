@@ -14,6 +14,8 @@ class Contact extends React.Component {
             message: '',
             disabled: false,
             emailSent: null,
+            sendRequest: false,
+            invalidRequest: false,
         }
     }
 
@@ -29,7 +31,13 @@ class Contact extends React.Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
+        this.setState({
+            invalidRequest: false
+        });
         if (this.state.name === '' || this.state.email === '' || this.state.message === '') {
+            this.setState({
+                invalidRequest: true
+            });
             return;
         }
 
@@ -37,9 +45,15 @@ class Contact extends React.Component {
             disabled: true
         });
 
+        const { name, email, message } = this.state;
+
         Axios.get('https://evening-inlet-95785.herokuapp.com/email', {
             params: {
-                data: this.state
+                data: {
+                    name: name,
+                    email: email,
+                    message: message,
+                }
             }
         }).then(res => {
             if (res.data === "Accepted") {
@@ -88,7 +102,7 @@ class Contact extends React.Component {
                         <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send message"} helperClasses={"rainbow-hover"} />
                         <Socials />
                     </div>
-
+                    {this.state.invalidRequest && <p className={`err-msg ${this.props.theme}`}>Didn't send, missing field</p>}
                     {this.state.emailSent === true && <p className={`success-msg ${this.props.theme}`}>Email Sent</p>}
                     {this.state.emailSent === false && <p className={`err-msg ${this.props.theme}`}>Email Not Sent</p>}
                 </form>
