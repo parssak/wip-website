@@ -2,16 +2,10 @@ import React from 'react';
 
 import Form from 'react-bootstrap/Form';
 import Button from '../minor-components/Button';
-
-// import Hero from '../components/Hero';
-// import Content from '../components/Content';
 import Axios from 'axios';
-import { useSelector } from 'react-redux';
 import Socials from '../minor-components/Socials';
 
-
 class Contact extends React.Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +17,6 @@ class Contact extends React.Component {
         }
     }
 
-
     handleChange = (event) => {
         const target = event.target;
         const value = target.type === 'checkbox' ? target.checked : target.value;
@@ -34,14 +27,9 @@ class Contact extends React.Component {
         })
     }
 
-
     handleSubmit = (event) => {
         event.preventDefault();
-
-        console.log(event.target);
-
         if (this.state.name === '' || this.state.email === '' || this.state.message === '') {
-            console.log("dis cap i'm outta heeeerre");
             return;
         }
 
@@ -54,8 +42,6 @@ class Contact extends React.Component {
                 data: this.state
             }
         }).then(res => {
-            console.log("RESULT:", res);
-            console.log("RESULT 2:", res.data);
             if (res.data === "Accepted") {
                 this.setState({
                     disabled: false,
@@ -68,8 +54,6 @@ class Contact extends React.Component {
                 });
             }
         }).catch(err => {
-            console.log(err);
-
             this.setState({
                 disabled: false,
                 emailSent: false
@@ -77,7 +61,6 @@ class Contact extends React.Component {
         })
 
     }
-
 
     render() {
         return (
@@ -108,13 +91,10 @@ class Contact extends React.Component {
 
                     {this.state.emailSent === true && <p className={`success-msg ${this.props.theme}`}>Email Sent</p>}
                     {this.state.emailSent === false && <p className={`err-msg ${this.props.theme}`}>Email Not Sent</p>}
-
                 </form>
-
             </div>
         );
     }
-
 }
 
 export default Contact;

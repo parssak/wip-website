@@ -13,22 +13,14 @@ export default function UserThemeListener() {
 
     useEffect(() => {
         const modeMe = (e) => {
-            console.log("CHANGED", e);
             setMode(e.matches ? "dark" : "light");
         }
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', modeMe);
-        console.log("got:", mode, "and theme is:", theme);
-        if (theme !== mode) {
-            console.log("changing theme to", mode);
-            // toggleLight();
-            // dispatch(mode === 'dark' ? toggleDark() : toggleDark());
-        }
         return window.matchMedia('(prefers-color-scheme: dark)').removeListener(modeMe);
 
     }, []);
 
     useEffect(() => {
-        console.log("hit effect");
         dispatch(mode === 'dark' ? toggleDark(): toggleLight());
     }, [mode]);
 
