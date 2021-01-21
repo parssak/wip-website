@@ -9,6 +9,10 @@ $accentLight: coral;
 $tabletBreakpoint: 900px;
 $mobileBreakpoint: 400px;
 
+$successColorDark: #5bf95b;
+$successColorLight: #2ac42a;
+$failColor: #d05050;
+
 $standardTransition: all 0.4s ease-in-out;
 
 
@@ -51,3 +55,15 @@ $standardTransition: all 0.4s ease-in-out;
 
 $rainbowAnim: colorRotate 6s ease-in-out infinite;
 $rainbowAnimBg: colorRotateBg 6s ease-in-out infinite;
+
+
+
+@keyframes waitLoad {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+$loadIn: waitLoad 0.5s ease-in;

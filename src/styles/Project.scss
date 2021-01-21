@@ -16,9 +16,15 @@
     .media {
         grid-area: media;
         display: flex;
-        overflow-x: scroll;
-        
+        overflow-x: auto;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+
         img {
+            animation: $loadIn;
             max-width: 20rem;
             max-height: 15rem;
             width: auto;
@@ -28,6 +34,12 @@
             box-shadow: 0 2px 10px black;
             margin: 0.5em;
             margin-bottom: 1em;
+            &:hover {
+                transition: 0.1s ease-in-out;
+                transform: scale(1.05);
+                cursor: pointer;
+            }
+       
         }
     }
 
@@ -43,7 +55,7 @@
             @media (min-width: 800px) {
                 max-width: 35ch;
             }
-            
+
             padding: 3rem;
             padding-left: 0;
         }
@@ -52,9 +64,7 @@
         padding: 3rem;
         padding-left: 0;
         display: flex;
-        // white-space: pre;
         max-width: 60ch;
         flex-grow: 1;
-        
     }
 }

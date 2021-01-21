@@ -51,3 +51,18 @@ form {
         }
     }
 }
+.success-msg {
+    &.dark {
+        color: $successColorDark;
+    }
+    &.light {
+        color: $successColorLight;
+    }
+    transition: $standardTransition;
+    font-weight: 700;
+}
+
+.fail-msg {
+    color: $failColor;
+    font-weight: 700;
+}

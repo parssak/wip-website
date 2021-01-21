@@ -2,15 +2,14 @@ import React from 'react'
 import Bubble from '../minor-components/Bubble';
 import Header from '../minor-components/Header';
 
-export default function Project({ project, x}) {
+export default function Project({ project, x, clickedImage}) {
     return (
-        
         <div className="project" key={"project" + x}>
             <Header>{project.name}</Header>
 
             <div className="media" key={"mediaz-platformz" + x + project.name}>
                 {project.media.map((media, x) => (
-                    <img src={media} alt="" width="250px" height="150px" key={"media-img" + x + project.name} />
+                    <img src={media} alt="" width="250px" height="150px" key={"media-img" + x + project.name} onClick={clickedImage}/>
                 ))}
             </div>
             

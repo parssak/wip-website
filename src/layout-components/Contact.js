@@ -49,28 +49,32 @@ class Contact extends React.Component {
             disabled: true
         });
 
-        Axios.post('http://localhost:3030/api/email', this.state)
-            .then(res => {
-                if (res.data.success) {
-                    this.setState({
-                        disabled: false,
-                        emailSent: true
-                    });
-                } else {
-                    this.setState({
-                        disabled: false,
-                        emailSent: false
-                    });
-                }
-            })
-            .catch(err => {
-                console.log(err);
-
+        Axios.get('https://evening-inlet-95785.herokuapp.com/email', {
+            params: {
+                data: this.state
+            }
+        }).then(res => {
+            console.log("RESULT:", res);
+            console.log("RESULT 2:", res.data);
+            if (res.data === "Accepted") {
+                this.setState({
+                    disabled: false,
+                    emailSent: true
+                });
+            } else {
                 this.setState({
                     disabled: false,
                     emailSent: false
                 });
-            })
+            }
+        }).catch(err => {
+            console.log(err);
+
+            this.setState({
+                disabled: false,
+                emailSent: false
+            });
+        })
 
     }
 
@@ -86,7 +90,7 @@ class Contact extends React.Component {
                         <Form.Label htmlFor="full-name">Full Name</Form.Label>
                         <Form.Control className={`customForm ${this.props.theme}`} id="full-name" name="name" type="text" value={this.state.name} onChange={this.handleChange} />
                     </div>
-                        
+
                     <div className="fieldset">
                         <Form.Label htmlFor="email">Email</Form.Label>
                         <Form.Control className={`customForm ${this.props.theme}`} id="email" name="email" type="email" value={this.state.email} onChange={this.handleChange} />
@@ -94,19 +98,19 @@ class Contact extends React.Component {
 
                     <div className="fieldset">
                         <Form.Label htmlFor="message">Message</Form.Label>
-                        <Form.Control className={`customForm ${this.props.theme}`}  id="message" name="message" as="textarea" rows="3" value={this.state.message} onChange={this.handleChange} />
+                        <Form.Control className={`customForm ${this.props.theme}`} id="message" name="message" as="textarea" rows="3" value={this.state.message} onChange={this.handleChange} />
                     </div>
 
                     <div className="flex-h-wrap">
-                        <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send message"} helperClasses={"rainbow-hover"}/>
+                        <Button variant="primary" type="submit" disabled={this.state.disabled} text={"Send message"} helperClasses={"rainbow-hover"} />
                         <Socials />
                     </div>
-                    
-                    {this.state.emailSent === true && <p className="d-inline success-msg">Email Sent</p>}
-                    {this.state.emailSent === false && <p className="d-inline err-msg">Email Not Sent</p>}
-                
+
+                    {this.state.emailSent === true && <p className={`success-msg ${this.props.theme}`}>Email Sent</p>}
+                    {this.state.emailSent === false && <p className={`err-msg ${this.props.theme}`}>Email Not Sent</p>}
+
                 </form>
-                
+
             </div>
         );
     }
