@@ -38,6 +38,7 @@ export default function App() {
 
   return (
     <div className={`main ${theme}`}>
+      <div className={`splash noselect ${theme}`} aria-hidden="true">Hi, I'm Parssa <span className="wave">👋</span></div>
       <NavBar currFocus={currFocus} />
       <div className="body">
         {currImage !== null && <Popup currImage={currImage} removeImage={deselectImage}/>}
