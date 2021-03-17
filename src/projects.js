@@ -69,17 +69,17 @@ export const projects = [
         //     }
         ]
     },
-    {
-        name: "TeaBlocks 🍎",
-        description: `An educational mobile app for teaching kids to code through a node-based visual programming language and lessons. I'm currently working on this project, but there is a demo available if you want to check it out!  `,
-        media: ["/media/teab_3.png", "/media/tea_2.png", "/media/tea_3.png"],
-        tech: ["TypeScript", "React Native", "ExpressJS", "PostgreSQL"],
-        platforms: ["TBD"],
-        links: [
-        {
-            text: "Browser Demo",
-            icon: linkIcon,
-                link: "https://parssak.github.io/teablocks-demo/"
-        }]
-    }
+    // {
+    //     name: "TeaBlocks 🍎",
+    //     description: `An educational mobile app for teaching kids to code through a node-based visual programming language and lessons. I'm currently working on this project, but there is a demo available if you want to check it out!  `,
+    //     media: ["/media/teab_3.png", "/media/tea_2.png", "/media/tea_3.png"],
+    //     tech: ["TypeScript", "React Native", "ExpressJS", "PostgreSQL"],
+    //     platforms: ["TBD"],
+    //     links: [
+    //     {
+    //         text: "Browser Demo",
+    //         icon: linkIcon,
+    //             link: "https://parssak.github.io/teablocks-demo/"
+    //     }]
+    // }
 ];

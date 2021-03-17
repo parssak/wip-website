@@ -1,10 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Bubble from '../minor-components/Bubble';
 import Header from '../minor-components/Header';
 
-export default function Project({ project, x, clickedImage}) {
+export default function Project({ project, x, clickedImage, currentStickyName }) {
+    const handleSticky = e => {
+        currentStickyName([project.name, e])
+    }
+    const ref = React.createRef()
+
+    // mount 
+    useEffect(() => {
+        const cachedRef = ref.current,
+            observer = new IntersectionObserver(
+                ([e]) => {
+                    handleSticky(e.boundingClientRect.top < 0 && e.intersectionRect.top === 0);
+                },
+                { threshold: [1] })
+
+        observer.observe(cachedRef)
+
+        // unmount
+        return function () {
+            observer.unobserve(cachedRef)
+        }
+    }, [])
+
     return (
-        <div className="project" key={"project" + x}>
+        <div className="project" key={"project" + x} ref={ref}>
             <Header>{project.name}</Header>
 
             <div className="media" key={"mediaz-platformz" + x + project.name}>

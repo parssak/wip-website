@@ -12,7 +12,7 @@
 html {
     background-color: $primaryDark;
 }
- 
+
 * {
     overflow-x: visible;
     font-family: "Inter";
@@ -20,20 +20,12 @@ html {
 
 // smart sticky header
 header {
-    position: sticky;
-    top: -1px;
-    padding-top: 2.5rem;
     font-size: 2.5rem;
     padding-top: 3rem;
     white-space: nowrap;
     overflow-x: visible;
     &.isSticky {
         z-index: 1;
-        &::before {
-            content: "                : ";
-            white-space: pre;
-            font-weight: 600;
-        }
     }
     @media (max-width: $mobileBreakpoint) {
         font-size: 2rem;
@@ -119,6 +111,8 @@ $bodyInlineMarginMobile: 1rem;
 .body {
     margin: $bodyInlineMarginReg;
     margin-right: 5rem;
+    position: relative;
+    z-index: 2;
     @media (max-width: $tabletBreakpoint) {
         margin: $bodyInlineMarginTab;
         margin-top: 0rem;
@@ -219,6 +213,13 @@ $bodyInlineMarginMobile: 1rem;
 .projects {
     @media (min-width: $tabletBreakpoint) {
         margin: 2em;
+    }
+    .projects-container {
+        // background-color: red;
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // align-items: center;
     }
 }
 
@@ -343,7 +344,7 @@ $bodyPaddingFooterTab: $bodyInlineMarginTab + 2rem;
     background-color: rgba(0, 0, 0, 0.5);
     img {
         max-width: 75%;
-
+        max-height: 90vh;
         @media (max-width: $tabletBreakpoint) {
             max-width: 85%;
         }
@@ -386,8 +387,8 @@ $bodyPaddingFooterTab: $bodyInlineMarginTab + 2rem;
     text-align: center;
     font-size: 3rem;
     pointer-events: none;
-    animation: intro 3s linear 0.5s 1 normal forwards;
-    
+    animation: intro 1s linear 0.5s 1 normal forwards;
+
     font-size: 3.5rem;
     font-weight: 600;
     letter-spacing: -0.031em;
@@ -406,28 +407,51 @@ $bodyPaddingFooterTab: $bodyInlineMarginTab + 2rem;
     }
     100% {
         transform: scale(1);
-        
     }
 }
 
 .wave {
     animation-name: $waveAnim;
-    animation-duration: 2.5s; 
+    animation-duration: 2.5s;
     animation-iteration-count: 1;
-    transform-origin: 70% 70%; 
+    transform-origin: 70% 70%;
     display: inline-block;
     &:active {
         animation: hiFive 0.1s ease-in-out;
     }
 }
 
-
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Old versions of Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+.gradient-bg {
+    max-width: 100vw;
+    background: radial-gradient(closest-side, rgba(228, 79, 79, 0.7), rgba(228, 79, 79, 0)) no-repeat scroll 600% 500% /
+            90% 90%,
+        radial-gradient(closest-side, rgba(228, 79, 79, 0.7), rgba(228, 79, 79, 0)) no-repeat scroll 600% 180% / 90% 90%,
+        radial-gradient(closest-side, rgba(250, 250, 218, 0.2), rgba(250, 250, 218, 0)) no-repeat scroll 100% 150% / 75%
+            50%,
+        radial-gradient(closest-side, rgba(250, 250, 218, 0.3), rgba(250, 250, 218, 0)) no-repeat scroll -400% -100% /
+            90% 80%,
+        radial-gradient(closest-side, rgba(94, 225, 249, 0.8), rgba(94, 225, 249, 0)) no-repeat scroll -100% -250% / 85%
+            80%,
+        radial-gradient(closest-side, rgba(94, 225, 249, 0.6), rgba(94, 225, 249, 0)) no-repeat scroll -170% 100% / 70% 60%,
+        linear-gradient(30deg, rgb(110, 16, 206) 10%, rgba(110, 16, 206, 0) 70%, rgba(255, 255, 255, 0) 90%) no-repeat
+            scroll 50% 50% / 100% 100%,
+        linear-gradient(144deg, rgba(233, 235, 104, 0), rgba(233, 235, 104, 0.3)) no-repeat scroll 0% 0%,
+        linear-gradient(90deg, rgba(104, 184, 235, 0.11), rgba(15, 216, 223, 0.11)) no-repeat scroll 0% 0%,
+        rgb(255, 255, 255) none repeat scroll 0% 0%;
+}
+
+.socials {
+    a {
+        background: none;
+    }
 }
