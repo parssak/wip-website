@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from '../minor-components/Button';
 import Axios from 'axios';
 import Socials from '../minor-components/Socials';
+import SmallGradientBackground from '../minor-components/SmallGradientBackground';
 
 class Contact extends React.Component {
     constructor(props) {
@@ -79,6 +80,7 @@ class Contact extends React.Component {
     render() {
         return (
             <div className={`contact`} id="contact">
+                <SmallGradientBackground/>
                 <div className={`sticky-header ${this.props.theme}`}>
                     <h3>Contact Me</h3>
                 </div>

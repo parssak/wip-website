@@ -24,9 +24,9 @@ header {
     padding-top: 3rem;
     white-space: nowrap;
     overflow-x: visible;
-    &.isSticky {
-        z-index: 1;
-    }
+    // &.isSticky {
+    //     z-index: 1;
+    // }
     @media (max-width: $mobileBreakpoint) {
         font-size: 2rem;
     }
