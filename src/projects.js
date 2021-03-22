@@ -46,7 +46,7 @@ export const projects = [
             link: "https://apps.apple.com/us/app/darco/id1541492663"
         },
         {
-            text: "In Browser",
+            text: "Live Demo",
             icon: linkIcon,
             link: "./darco/index.html"
         }]
@@ -55,18 +55,18 @@ export const projects = [
         name: "MixBot 🎛️",
         description: "MixBot acts as your personal DJ. MixBot finds songs to mix, loads songs onto two Decks, and mixes an entire DJ set. You can select from 3 different types of mixes, then Mixbot will fetch songs through the Spotify and YouTube APIs, and mixes them using the WebAudio API.",
         media: ["/media/mix_1.png", "/media/mix_2.png", "/media/mix_3.png"],
-        tech: ["JavaScript", "ReactJS", "ExpressJS", "Electron", "MongoDB"],
+        tech: ["JavaScript", "ReactJS", "NodeJS", "ExpressJS", "Electron", "MongoDB"],
         platforms: ["MacOS", "Windows"],
         links: [{
             text: "GitHub",
             icon: linkIcon,
             link: "https://github.com/parssak/mixbot"
         },
-        // {
-        //     text: "Download Mac / Windows",
-        //     icon: linkIcon,
-        //     link: ""
-        //     }
+        {
+            text: "Live Demo",
+            icon: linkIcon,
+            link: "./mixbot/index.html"
+        }
         ]
     },
     // {
