@@ -455,3 +455,7 @@ $bodyPaddingFooterTab: $bodyInlineMarginTab + 2rem;
         background: none;
     }
 }
+
+.no-focus {
+    outline: none;
+}

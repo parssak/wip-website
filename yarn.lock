@@ -1469,6 +1469,11 @@
     estree-walker "^1.0.1"
     picomatch "^2.2.2"
 
+"@rooks/use-window-size@^4.10.0":
+  version "4.10.0"
+  resolved "https://registry.yarnpkg.com/@rooks/use-window-size/-/use-window-size-4.10.0.tgz#3c5988da9d15064c21ea2e3f1fa06684adf71ddf"
+  integrity sha512-D3M04QYygn3dSj+MHdW+iPyAkbMzYuXSzR+hn0O7q+/KJjjwS0p5+puORGe2gZ4otOB2sLtRKCvNN7v0hQfv6A==
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.1.tgz#e7df00f98a203324f6dc7cc606cad9d4a8ab2217"

@@ -1,7 +1,7 @@
 function DopeBackground() {
     return (
-        <div className="dope-bg" style={{ position: 'absolute', maxWidth: '100vw' }}>
-            <svg width='90vw' height="1024" viewBox="0 0 100vw 1024" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div className="dope-bg" style={{ position: 'absolute', maxWidth: '99vw', overflow: "overflow", margin: 0 }}>
+            <svg width='95vw' height="1024" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clipPath="url(#clip0)">
                     <rect width="100vw" height="1024" fill="none"/>
                     <ellipse opacity="0.35" cx="-5.66509" cy="398.167" rx="455.056" ry="432.842" transform="rotate(-31.116 -5.66509 398.167)" fill="url(#paint0_radial)" />

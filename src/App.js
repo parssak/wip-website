@@ -59,9 +59,11 @@ export default function App() {
           {currImage !== null && <Popup currImage={currImage} removeImage={deselectImage} />}
 
           <UserThemeListener />
+
           <InView as="div" onChange={(inView, entry) => changeFocus('hero', inView)}>
             <Hero ref={heroRef} />
           </InView>
+          
           <InView as="div" onChange={(inView, entry) => changeFocus('projects', inView)}>
             <Projects ref={projectRef} selectedImage={selectedImage} />
           </InView>

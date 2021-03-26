@@ -1,22 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Project from './Project';
 import { useSelector } from 'react-redux';
 import { projects } from '../projects';
-const { v4: uuidv4 } = require('uuid');
+import { v4 as uuidv4 } from 'uuid';
 
-// let all = [[' ', true]];
-// let curr = [' ', true];
 export default function Projects({ selectedImage }) {
     const theme = useSelector(state => state.theme);
-    // const [currentStickyName, setCurrentStickyName] = useState([' ', true]);
-    // const [onMobile, setOnMobile] = useState(false)
     function clickedImage(e) {
         selectedImage(e.target.src);
     }
-    // useEffect(() => {
-    //    window.addEventListener("touchstart", () => {setOnMobile(true)})
-    // }, []);
-
 
     return (
         <div className="projects" id="projects">

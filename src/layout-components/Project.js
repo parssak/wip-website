@@ -1,46 +1,52 @@
 import React from 'react'
 import Bubble from '../minor-components/Bubble';
+import { v4 as uuidv4 } from 'uuid';
+import useWindowSize from "@rooks/use-window-size"
 
-export default function Project({ project, x, clickedImage }) {
+
+export default function Project({ project, clickedImage }) {
+    const { innerWidth } = useWindowSize();
 
     return (
-        <div className="project" key={"project" + x} >
+        <div className="project" key={uuidv4()} >
             <header>{project.name}</header>
-            <div className="media" key={"mediaz-platformz" + x + project.name}>
-                {project.media.map((media, x) => (
-                    <img src={media} alt="" width="250px" height="150px" key={"media-img" + x + project.name} onClick={clickedImage}/>
-                ))}
+            <div className="media">
+                {
+                    innerWidth > 1120 ? project.media.map((media) => (
+                        <img src={media} alt="" width="250px" height="150px" key={uuidv4()} onClick={clickedImage} />
+                    )) : <img src={project.media[0]} alt="" width="250px" height="150px" />
+                }
             </div>
             
-            <div className="flex-wrapper" key={"flex-wrapperz" + x + project.name}>
-                <div className="description" key={"desc" + x + project.name}>
+            <div className="flex-wrapper">
+                <div className="description">
                     <p>
                         {project.description}
                     </p>
                 </div>
-                <div className="bubbles" key={"tech-platformz" + x + project.name}>
+                <div className="bubbles">
                     <div className="platforms">
                         <h4>Platforms</h4>
-                        {project.platforms.map((platform, x) => (
-                            <div className="platform bubble" key={"platform-bubble" + x + project.name}>
+                        {project.platforms.map((platform) => (
+                            <div className="platform bubble" key={uuidv4()}>
                                 {platform}
                             </div>
                         ))}
                     </div>
 
-                    <div className="technologies" key={"technologiez" + x + project.name}>
+                    <div className="technologies">
                         <h4>Technologies</h4>
-                        {project.tech.map((tech, x) => (
-                            <div className="tech bubble" key={"tech-bubble" + x + project.name}>
+                        {project.tech.map((tech) => (
+                            <div className="tech bubble" key={uuidv4()}>
                                 {tech}
                             </div>
                         ))}
                     </div>
 
-                    <div className="links" key={"linkz" + x + project.name}>
+                    <div className="links">
                         <h4>Links</h4>
-                        {project.links.map((link, x) => (
-                            <Bubble text={link.text} link={link.link}/>
+                        {project.links.map((link) => (
+                            <Bubble text={link.text} link={link.link} key={uuidv4()}/>
                         ))}
                     </div>
                 </div>

@@ -12,7 +12,7 @@ export default function Toggle({helperClasses}) {
 
     return (
         <div className={`${helperClasses}`}>
-            <Button onClick={() => toggleTheme()} text={"Toggle Theme"} />
+            <Button onClick={() => toggleTheme()} text={"Toggle Theme"} helperClasses="no-focus"/>
         </div>
     )
 }
