@@ -48,7 +48,7 @@ export const projects = [
         {
             text: "Live Demo",
             icon: linkIcon,
-            link: "./darco/index.html"
+            link: "./darco"
         }]
     },
     {
@@ -65,7 +65,7 @@ export const projects = [
         {
             text: "Live Demo",
             icon: linkIcon,
-            link: "./mixbot/index.html"
+            link: "./mixbot"
         }
         ]
     },
