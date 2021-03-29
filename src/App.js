@@ -47,6 +47,11 @@ export default function App() {
 
   useEffect(() => {
     window.addEventListener('scroll', noScroll);
+    // Prevents window from moving on touch on older browsers.
+    window.addEventListener('touchmove', function (event) {
+      event.preventDefault()
+    }, false)
+    setTimeout(() => restoreScroll(), 1000)
   }, [])
   return (
     <>
